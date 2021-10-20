@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: demo-application
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:h2:mem:TEST;DB_CLOSE_DELAY=-1;}
+    username: ${DATASOURCE_USER:sa}
+    password: ${DATASOURCE_PASSWORD:}
+  jpa:
+    properties:
+      hibernate:
+        dialect: ${HIBERNATE_DIALECT:org.hibernate.dialect.H2Dialect}
+        show_sql: ${JPA_SHOW_SQL:false}
+        format_sql: ${JPA_FORMAT_SQL:false}
+    hibernate:
+      ddl-auto: ${DDL_MODE:update}
+logging:
+  level:
+    root: ${LOG_LEVEL:info}
+
+rss-feed:
+  url: ${RSS_FEED_URL:http://rss.cnn.com/rss/edition_world.rss}
